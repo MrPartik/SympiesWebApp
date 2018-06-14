@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/dashboard',function(){
+    return view('dashboard.index')->with('title','Dashboard');
+})->name('Dashboard');
+
+Route::get('/ledger',function(){
+    return view('ledger.index')->with('title','Ledger');
+})->name('Ledger');
+
+Route::get('/inventory',function(){
+    return view('inventory.index')->with('title','Inventory');
+})->name('Inventory');
+
+Route::get('/customer',function(){
+    return view('customer.index')->with('title','Customer');
+})->name('Customer');
+
