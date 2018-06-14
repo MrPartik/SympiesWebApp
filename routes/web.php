@@ -11,23 +11,27 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
-Route::get('/dashboard',function(){
-    return view('dashboard.index')->with('title','Dashboard');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('Welcome');
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard.index');
 })->name('Dashboard');
 
-Route::get('/ledger',function(){
-    return view('ledger.index')->with('title','Ledger');
+Route::get('/ledger', function () {
+    return view('admin.ledger.index');
 })->name('Ledger');
 
-Route::get('/inventory',function(){
-    return view('inventory.index')->with('title','Inventory');
+Route::get('/inventory', function () {
+    return view('admin.inventory.index');
 })->name('Inventory');
 
-Route::get('/customer',function(){
-    return view('customer.index')->with('title','Customer');
+Route::get('/customer', function () {
+    return view('admin.customer.index');
 })->name('Customer');
-

@@ -545,6 +545,62 @@
         ]
     },
     {
+        "name": "grimthorr/laravel-toast",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Grimthorr/laravel-toast.git",
+            "reference": "046d9d44e59f552a7be60aefa5c86b255b6d5312"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Grimthorr/laravel-toast/zipball/046d9d44e59f552a7be60aefa5c86b255b6d5312",
+            "reference": "046d9d44e59f552a7be60aefa5c86b255b6d5312",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "5.*",
+            "illuminate/database": "5.*",
+            "illuminate/support": "5.*",
+            "php": ">=5.4.0"
+        },
+        "time": "2018-04-10T11:21:23+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Grimthorr\\LaravelToast\\ServiceProvider"
+                ],
+                "aliases": {
+                    "Toast": "Grimthorr\\LaravelToast\\Facade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Grimthorr\\LaravelToast\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Grimthorr",
+                "email": "phil@hughesbox.co.uk",
+                "homepage": "http://hughesbox.co.uk"
+            }
+        ],
+        "description": "Simple toast messages for Laravel 5.",
+        "homepage": "https://github.com/Grimthorr/laravel-toast"
+    },
+    {
         "name": "hamcrest/hamcrest-php",
         "version": "v2.0.0",
         "version_normalized": "2.0.0.0",

@@ -1,95 +1,44 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Top Navigation
+                    <small>Example 2.0</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Layout</a></li>
+                    <li class="active">Top Navigation</li>
+                </ol>
+            </section>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+            <!-- Main content -->
+            <section class="content">
+                <div class="callout callout-info">
+                    <h4>Tip!</h4>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+                    <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a
+                        sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular
+                        links instead.</p>
                 </div>
-            @endif
+                <div class="callout callout-danger">
+                    <h4>Warning!</h4>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                    <p>The construction of this layout differs from the normal one. In other words, the HTML markup of the navbar
+                        and the content will slightly differ than that of the normal layout.</p>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Blank Box</h3>
+                    </div>
+                    <div class="box-body">
+                        The great content goes here
+                    </div>
+                    <!-- /.box-body -->
                 </div>
-            </div>
-        </div>
-    </body>
-</html>
+                <!-- /.box -->
+            </section>
+            <!-- /.content -->
+@endsection
