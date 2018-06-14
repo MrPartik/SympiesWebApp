@@ -20,18 +20,33 @@ Route::get('/', function () {
     return view('welcome');
 })->name('Welcome');
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard.index');
-})->name('Dashboard');
+Route::group(['middleware' => ['member']], function (){
 
-Route::get('/ledger', function () {
-    return view('admin.ledger.index');
-})->name('Ledger');
+    Route::get('/member', function () {
+        return view('member.index');
+    })->name('Member');
+});
 
-Route::get('/inventory', function () {
-    return view('admin.inventory.index');
-})->name('Inventory');
 
-Route::get('/customer', function () {
-    return view('admin.customer.index');
-})->name('Customer');
+
+Route::group(['middleware' => ['admin']], function () {
+
+
+    Route::get('shop/dashboard', function () {
+        return view('admin.dashboard.index');
+    })->name('Dashboard');
+
+    Route::get('shop/ledger', function () {
+        return view('admin.ledger.index');
+    })->name('Ledger');
+
+    Route::get('shop/inventory', function () {
+        return view('admin.inventory.index');
+    })->name('Inventory');
+
+    Route::get('shop/customer', function () {
+        return view('admin.customer.index');
+    })->name('Customer');
+
+});
+

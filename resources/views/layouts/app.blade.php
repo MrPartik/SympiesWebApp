@@ -37,7 +37,11 @@
                     <ul class="nav navbar-nav">
                         <li class="{{Route::is('Welcome')?'active':''}}"><a href="{{url('/')}}">Home</a></li>
                         <li class="{{Route::is('Welcome')?'active':''}}"><a href="#">Contact us</a></li>
+                        @if(Auth::guest())
                         <li class="{{Route::is('login')?'active':''}}"><a href="{{route('login')}}">Login</a></li>
+                        @else
+                        <li><a href="{{route('Dashboard')}}">We miss you!! {{Auth::user()->name}}</a></li>
+                        @endif
                         <!--<li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                           <ul class="dropdown-menu" role="menu">
