@@ -1,4 +1,5 @@
 
+{{--<div class="modal"></div>--}}
 <!-- jQuery 3 -->
 <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -31,3 +32,12 @@
 <script src="{{asset('bower_components/morris.js/morris.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+{{--<script>--}}
+    {{--$(document).ready(function(){--}}
+        {{--$("body").removeClass("loading");--}}
+    {{--});--}}
+    {{--$(document).unload(function(){--}}
+        {{--$("body").addClass("loading");--}}
+    {{--});--}}
+{{--</script>--}}
+<script>$(document).ajaxStart(function() { Pace.restart(); }); </script>

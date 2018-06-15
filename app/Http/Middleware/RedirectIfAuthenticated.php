@@ -22,8 +22,12 @@ class RedirectIfAuthenticated
                 return redirect('/shop/dashboard');
             } else if (Auth::user()->role == "member") {
                 return redirect('/member');
+            }else{
+                Auth::logout();
+                return redirect('login');
             }
         }
+
         return $next($request);
     }
 }

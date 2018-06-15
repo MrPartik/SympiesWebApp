@@ -10,8 +10,8 @@ class memberMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -19,9 +19,12 @@ class memberMiddleware
         if (null !== Auth::user()) {
             if (Auth::user()->role == "member") {
                 return $next($request);
+            }else if(Auth::user()->role =="admin"){
+                return redirect('/shop/dashboard');
             }
-            return response("Your credentials isn't authorized to access this page.", 401);
+            return abort(500);
+        } else {
+            return redirect('/login');
         }
-        return redirect('/login');
     }
 }

@@ -14,9 +14,16 @@
 
 Auth::routes();
 
+//error page
+Route::get('/400',function(){
+    return view('errorPage.400');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/','checkLoggedController@checkLogged')->name('Welcome');
+
+Auth::routes();
 
 Route::group(['middleware' => ['member']], function (){
 

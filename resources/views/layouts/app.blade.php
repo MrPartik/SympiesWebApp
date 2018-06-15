@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-green fixed layout-top-nav">
+<body class="hold-transition skin-green fixed layout-top-nav loading">
 <div class="wrapper">
 
     <header class="main-header">
@@ -36,7 +36,7 @@
 
                     <ul class="nav navbar-nav">
                         <li class="{{Route::is('Welcome')?'active':''}}"><a href="{{url('/')}}">Home</a></li>
-                        <li class="{{Route::is('Welcome')?'active':''}}"><a href="#">Contact us</a></li>
+                        <li class=""><a href="#">Contact us</a></li>
                         @if(Auth::guest())
                         <li class="{{Route::is('login')?'active':''}}"><a href="{{route('login')}}">Login</a></li>
                         @else

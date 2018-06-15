@@ -9,7 +9,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     @include('includes.css')
 </head>
-<body class="hold-transition skin-green fixed sidebar-mini">
+<body class="hold-transition skin-green fixed sidebar-mini loading">
 <div class="wrapper">
 
     <header class="main-header">

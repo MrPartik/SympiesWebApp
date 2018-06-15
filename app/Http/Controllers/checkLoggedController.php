@@ -9,9 +9,11 @@ class checkLoggedController extends Controller
 {
     //
 
-    public function index(){
+    public function index()
+    {
 
     }
+
     public function checkLogged()
     {
         if (null !== Auth::user()) {
@@ -22,11 +24,10 @@ class checkLoggedController extends Controller
 
             } else {
                 Auth::logout();
-                return redirect('login');
+                return abort(500);
             }
-        } else{
+        } else {
             return view('welcome');
         }
-
     }
 }

@@ -19,9 +19,12 @@ class adminMiddleware
         if (null !== Auth::user()) {
             if (Auth::user()->role == "admin") {
                 return $next($request);
+            }else if(Auth::user()->role =="member"){
+                return redirect('/member');
             }
-            return response("Your credentials isn't authorized to access this page.", 401);
+            return abort(500);
+        } else {
+            return redirect('/login');
         }
-        return redirect('/login');
     }
 }
