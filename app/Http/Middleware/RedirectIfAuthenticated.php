@@ -24,7 +24,6 @@ class RedirectIfAuthenticated
                 return redirect('/member');
             }
         }
-
         return $next($request);
     }
 }

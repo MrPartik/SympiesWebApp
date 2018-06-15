@@ -16,9 +16,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('Welcome');
+Route::get('/','checkLoggedController@checkLogged')->name('Welcome');
 
 Route::group(['middleware' => ['member']], function (){
 
@@ -26,8 +24,6 @@ Route::group(['middleware' => ['member']], function (){
         return view('member.index');
     })->name('Member');
 });
-
-
 
 Route::group(['middleware' => ['admin']], function () {
 

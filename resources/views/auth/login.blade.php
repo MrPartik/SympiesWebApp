@@ -11,7 +11,8 @@
             <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                 @csrf
                 <div class="form-group has-feedback">
-                    <input id="email" type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                    <input id="email" type="email" placeholder="Email"
+                           class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                            name="email" value="{{ old('email') }}" required autofocus>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
@@ -23,18 +24,7 @@
 
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-                @if ($errors->has('password'))
-                    <div class="alert alert-danger alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        {{ $errors->first('password') }} </div>
-                    </span>
-                @endif
-                @if ($errors->has('email'))
-                    <div class="alert alert-danger alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        {{ $errors->first('email') }} </div>
-                    </span>
-                @endif
+
 
                 <div class="row">
                     <div class="col-xs-8">
@@ -53,7 +43,12 @@
                     </div>
                     <!-- /.col -->
                 </div>
-
+                @if ($errors->has('email'))
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ $errors->first('email') }} </div>
+                    </span>
+                @endif
 
                 <div class="social-auth-links text-center">
                     <p>- OR -</p>
@@ -79,13 +74,13 @@
     <!-- /.login-box -->
 @endsection
 @section('extrajs')
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' /* optional */
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' /* optional */
+            });
         });
-    });
-</script>
+    </script>
 @endsection
