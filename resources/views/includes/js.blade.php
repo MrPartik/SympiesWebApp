@@ -23,6 +23,7 @@
 <script src="{{asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 <!-- iCheck 1.0.1 -->
 <script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
+<script src="{{asset('izitoast/dist/js/iziToast.min.js')}}" type="text/javascript"></script>
 <!-- FastClick -->
 <script src="{{asset('bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
@@ -32,6 +33,7 @@
 <script src="{{asset('bower_components/morris.js/morris.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+
 {{--<script>--}}
     {{--$(document).ready(function(){--}}
         {{--$("body").removeClass("loading");--}}
