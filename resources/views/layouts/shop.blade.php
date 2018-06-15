@@ -292,8 +292,6 @@
             $(this).text("Show Password");
         }
     });
-    $(function () {
-        "use strict";
         $('.sidebar-menu').tree();
 </script>
 @yield('extrajs')

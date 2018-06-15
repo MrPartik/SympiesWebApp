@@ -40,4 +40,3 @@
         {{--$("body").addClass("loading");--}}
     {{--});--}}
 {{--</script>--}}
-<script>$(document).ajaxStart(function() { Pace.restart(); }); </script>
